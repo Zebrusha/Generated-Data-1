@@ -40,9 +40,9 @@ public class TestsWithGeneratedDataTestV1 {
                 $("[data-test-id=date] input").setValue(secondMeetingDate);
                 $(".button").click();
                 $("[data-test-id=replan-notification]").shouldBe(visible);
-                $(withText("У вас уже запланирована")).shouldHave(Condition.exactText("У вас уже запланирована встреча на другую дату. Перепланировать?
-
-Перепланировать"));
+                $(withText("У вас уже запланирована")).shouldHave(Condition.exactText("У вас уже запланирована встреча на другую дату. Перепланировать?\n" +
+                        "\n" +
+                        "Перепланировать"));
                 $(".button__content").click();
                 $("[data-test-id=success-notification]").shouldBe(visible);
                 $(".notification__content").shouldHave(Condition.exactText("Встреча успешно запланирована на " + secondMeetingDate));
